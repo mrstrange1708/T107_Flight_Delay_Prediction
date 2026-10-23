@@ -1,5 +1,9 @@
+# data are downloaded by fdp.data.download_raw(); never commit them
 data/
 __pycache__/
+*.pyc
 .ipynb_checkpoints/
-.omc/
+*_outputs.zip
 .DS_Store
+.venv/
+.omc/

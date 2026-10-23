@@ -1,8 +1,9 @@
-numpy
-pandas
-scikit-learn
-matplotlib
-seaborn
-xgboost
-lightgbm
-pytest
+# Phase 1 (ML). Works on Google Colab and Python 3.10-3.13.
+pandas>=2.0
+numpy>=1.26
+scikit-learn>=1.4
+xgboost>=2.0
+scipy>=1.11
+statsmodels>=0.14
+matplotlib>=3.8
+pytest>=8

@@ -1,0 +1,58 @@
+{
+  "summary": {
+    "flights": 336776,
+    "cancelled": 8255,
+    "diverted": 1175,
+    "labelled": 327346,
+    "delayed_share_of_labelled": 0.2447
+  },
+  "split_table": [
+    {
+      "block": "train",
+      "from": "2013-01-15",
+      "to": "2013-08-31",
+      "flights": "205642",
+      "share_%": "65.2",
+      "delay_rate": "0.2681"
+    },
+    {
+      "block": "valid",
+      "from": "2013-09-01",
+      "to": "2013-09-30",
+      "flights": "27010",
+      "share_%": "8.6",
+      "delay_rate": "0.1372"
+    },
+    {
+      "block": "calib",
+      "from": "2013-10-01",
+      "to": "2013-10-31",
+      "flights": "28618",
+      "share_%": "9.1",
+      "delay_rate": "0.1756"
+    },
+    {
+      "block": "test",
+      "from": "2013-11-01",
+      "to": "2013-12-31",
+      "flights": "53991",
+      "share_%": "17.1",
+      "delay_rate": "0.2583"
+    }
+  ],
+  "monthly_delay_rate": {
+    "1": 0.2727,
+    "2": 0.2378,
+    "3": 0.236,
+    "4": 0.2875,
+    "5": 0.2267,
+    "6": 0.3152,
+    "7": 0.3221,
+    "8": 0.246,
+    "9": 0.1372,
+    "10": 0.1756,
+    "11": 0.181,
+    "12": 0.3355
+  },
+  "valid_always_on_time_accuracy": 0.8628
+}

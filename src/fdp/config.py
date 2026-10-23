@@ -1,5 +1,5 @@
 """Project-wide settings: paths, label definition, decision time, chronological splits.
-Owner: Rishik (Phase 1 problem definition + Phase 5 data splitting)."""
+Phase 1 problem definition + Phase 5 data splitting."""
 from pathlib import Path
 
 import pandas as pd

@@ -1,5 +1,4 @@
-"""Phase 1 success metrics, decided before any model is trained, and used by everyone.
-Owner: Rishik."""
+"""Phase 1 success metrics, decided before any model is trained, and used by everyone."""
 import numpy as np
 from sklearn.metrics import (average_precision_score, brier_score_loss, log_loss,
                              precision_recall_curve, roc_auc_score)

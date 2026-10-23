@@ -1,5 +1,4 @@
-"""Phase 2 data collection + labelling + Phase 5 splitting.
-Owner: Rishik."""
+"""Phase 2 data collection + labelling + Phase 5 splitting."""
 import subprocess
 import sys
 import tarfile

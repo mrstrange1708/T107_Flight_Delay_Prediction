@@ -1,0 +1,367 @@
+{
+  "run": {
+    "quick_run": false,
+    "created_at_utc": "2026-10-23T10:58:05.127999+00:00",
+    "python": "3.14.7",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scikit_learn": "1.9.1",
+    "xgboost": "3.4.1",
+    "seed": 42,
+    "split_rows": {
+      "train": 205642,
+      "valid": 27010,
+      "calib": 28618
+    },
+    "test_evaluated": false,
+    "metric": "average_precision_score",
+    "gd_epochs": 300,
+    "learning_rate_epochs": 100,
+    "sgd_sample_rows": 20000
+  },
+  "baselines": {
+    "valid": {
+      "majority_class": 0.1372,
+      "rule_flight_28d_rate": 0.1897,
+      "rule_scheduled_hour": 0.1883
+    },
+    "calib": {
+      "majority_class": 0.1756,
+      "rule_flight_28d_rate": 0.2692,
+      "rule_scheduled_hour": 0.2286
+    }
+  },
+  "gd_table": [
+    {
+      "method": "batch GD (lr 0.5)",
+      "epochs_run": 200,
+      "final_train_logloss": 0.5279,
+      "valid_pr_auc": 0.2632
+    },
+    {
+      "method": "mini-batch 256 (lr 0.05)",
+      "epochs_run": 5,
+      "final_train_logloss": 0.5282,
+      "valid_pr_auc": 0.2665
+    },
+    {
+      "method": "SGD, 20k rows (lr 0.01)",
+      "epochs_run": 2,
+      "final_train_logloss": 0.5459,
+      "valid_pr_auc": 0.2587
+    },
+    {
+      "method": "scikit-learn (lbfgs, same model)",
+      "epochs_run": 48,
+      "final_train_logloss": 0.5278,
+      "valid_pr_auc": 0.2612
+    }
+  ],
+  "lr_effect_logloss": {
+    "0.01": 0.6195,
+    "0.1": 0.5335,
+    "0.5": 0.5282,
+    "2.0": 0.5926,
+    "8.0": 2.3942
+  },
+  "regularisation": [
+    {
+      "C": 0.0003,
+      "train_pr_auc": 0.46840360674107234,
+      "valid_pr_auc": 0.2640439994816917,
+      "calib_pr_auc": 0.306621445045751
+    },
+    {
+      "C": 0.001,
+      "train_pr_auc": 0.4713785434384262,
+      "valid_pr_auc": 0.2654606383110089,
+      "calib_pr_auc": 0.30793964339125235
+    },
+    {
+      "C": 0.003,
+      "train_pr_auc": 0.47283818370127895,
+      "valid_pr_auc": 0.2646014810129709,
+      "calib_pr_auc": 0.3076460895060855
+    },
+    {
+      "C": 0.01,
+      "train_pr_auc": 0.47359538999618045,
+      "valid_pr_auc": 0.26337818685994285,
+      "calib_pr_auc": 0.3073558521714321
+    },
+    {
+      "C": 0.1,
+      "train_pr_auc": 0.4738933063384812,
+      "valid_pr_auc": 0.26280204511452504,
+      "calib_pr_auc": 0.30713897156761366
+    },
+    {
+      "C": 1.0,
+      "train_pr_auc": 0.4740343760021596,
+      "valid_pr_auc": 0.2624064204938269,
+      "calib_pr_auc": 0.3072718995616825
+    }
+  ],
+  "best_C": 0.001,
+  "tree_depth": [
+    {
+      "max_depth": "2",
+      "leaves": 4,
+      "train_pr_auc": 0.3715,
+      "valid_pr_auc": 0.1801
+    },
+    {
+      "max_depth": "4",
+      "leaves": 16,
+      "train_pr_auc": 0.4217,
+      "valid_pr_auc": 0.1443
+    },
+    {
+      "max_depth": "6",
+      "leaves": 64,
+      "train_pr_auc": 0.4714,
+      "valid_pr_auc": 0.1524
+    },
+    {
+      "max_depth": "8",
+      "leaves": 245,
+      "train_pr_auc": 0.528,
+      "valid_pr_auc": 0.1474
+    },
+    {
+      "max_depth": "12",
+      "leaves": 2259,
+      "train_pr_auc": 0.675,
+      "valid_pr_auc": 0.1485
+    },
+    {
+      "max_depth": "16",
+      "leaves": 8744,
+      "train_pr_auc": 0.8296,
+      "valid_pr_auc": 0.1485
+    },
+    {
+      "max_depth": "None",
+      "leaves": 30457,
+      "train_pr_auc": 1.0,
+      "valid_pr_auc": 0.14
+    }
+  ],
+  "best_tree_depth": "2",
+  "model_selection": [
+    {
+      "model": "Logistic regression",
+      "Jul": 0.5566,
+      "Aug": 0.4058,
+      "Sep": 0.2624,
+      "mean_pr_auc": 0.4083,
+      "fit_seconds": 3.63
+    },
+    {
+      "model": "Decision tree",
+      "Jul": 0.4856,
+      "Aug": 0.3535,
+      "Sep": 0.1446,
+      "mean_pr_auc": 0.3279,
+      "fit_seconds": 1.86
+    },
+    {
+      "model": "Random forest",
+      "Jul": 0.5542,
+      "Aug": 0.3887,
+      "Sep": 0.2157,
+      "mean_pr_auc": 0.3862,
+      "fit_seconds": 8.04
+    },
+    {
+      "model": "Gradient boosting (XGBoost, untuned)",
+      "Jul": 0.5591,
+      "Aug": 0.3692,
+      "Sep": 0.1695,
+      "mean_pr_auc": 0.3659,
+      "fit_seconds": 2.34
+    }
+  ],
+  "rolling_parameters": {
+    "Logistic regression": {
+      "C": 1.0
+    },
+    "Decision tree": {
+      "max_depth": 4,
+      "min_samples_leaf": 200
+    },
+    "Random forest": {
+      "n_estimators": 150,
+      "min_samples_leaf": 100,
+      "max_features": "sqrt",
+      "max_samples": 0.5
+    },
+    "Gradient boosting (XGBoost, untuned)": {
+      "n_estimators": 300,
+      "learning_rate": 0.1,
+      "max_depth": 6
+    }
+  },
+  "rolling_folds": [
+    {
+      "model": "Logistic regression",
+      "month": 7,
+      "train_rows": 148593,
+      "valid_rows": 28293,
+      "train_end": "2013-06-30",
+      "valid_start": "2013-07-01",
+      "pr_auc": 0.5566097940767588,
+      "fit_seconds": 2.3831605830000626
+    },
+    {
+      "model": "Logistic regression",
+      "month": 8,
+      "train_rows": 176886,
+      "valid_rows": 28756,
+      "train_end": "2013-07-31",
+      "valid_start": "2013-08-01",
+      "pr_auc": 0.4057604207961282,
+      "fit_seconds": 3.9301983330005896
+    },
+    {
+      "model": "Logistic regression",
+      "month": 9,
+      "train_rows": 205642,
+      "valid_rows": 27010,
+      "train_end": "2013-08-31",
+      "valid_start": "2013-09-01",
+      "pr_auc": 0.2624064204938269,
+      "fit_seconds": 4.576405083999816
+    },
+    {
+      "model": "Decision tree",
+      "month": 7,
+      "train_rows": 148593,
+      "valid_rows": 28293,
+      "train_end": "2013-06-30",
+      "valid_start": "2013-07-01",
+      "pr_auc": 0.48559279895140595,
+      "fit_seconds": 1.2804065000000264
+    },
+    {
+      "model": "Decision tree",
+      "month": 8,
+      "train_rows": 176886,
+      "valid_rows": 28756,
+      "train_end": "2013-07-31",
+      "valid_start": "2013-08-01",
+      "pr_auc": 0.3534956211872347,
+      "fit_seconds": 1.712807249999969
+    },
+    {
+      "model": "Decision tree",
+      "month": 9,
+      "train_rows": 205642,
+      "valid_rows": 27010,
+      "train_end": "2013-08-31",
+      "valid_start": "2013-09-01",
+      "pr_auc": 0.14464828876403635,
+      "fit_seconds": 2.6015137080003115
+    },
+    {
+      "model": "Random forest",
+      "month": 7,
+      "train_rows": 148593,
+      "valid_rows": 28293,
+      "train_end": "2013-06-30",
+      "valid_start": "2013-07-01",
+      "pr_auc": 0.5541917704396376,
+      "fit_seconds": 7.211434249999911
+    },
+    {
+      "model": "Random forest",
+      "month": 8,
+      "train_rows": 176886,
+      "valid_rows": 28756,
+      "train_end": "2013-07-31",
+      "valid_start": "2013-08-01",
+      "pr_auc": 0.38874647566641135,
+      "fit_seconds": 7.879374250000183
+    },
+    {
+      "model": "Random forest",
+      "month": 9,
+      "train_rows": 205642,
+      "valid_rows": 27010,
+      "train_end": "2013-08-31",
+      "valid_start": "2013-09-01",
+      "pr_auc": 0.21567081946035557,
+      "fit_seconds": 9.031013207999422
+    },
+    {
+      "model": "Gradient boosting (XGBoost, untuned)",
+      "month": 7,
+      "train_rows": 148593,
+      "valid_rows": 28293,
+      "train_end": "2013-06-30",
+      "valid_start": "2013-07-01",
+      "pr_auc": 0.559123760297307,
+      "fit_seconds": 2.183995207999942
+    },
+    {
+      "model": "Gradient boosting (XGBoost, untuned)",
+      "month": 8,
+      "train_rows": 176886,
+      "valid_rows": 28756,
+      "train_end": "2013-07-31",
+      "valid_start": "2013-08-01",
+      "pr_auc": 0.3691983579330767,
+      "fit_seconds": 2.2707766249995984
+    },
+    {
+      "model": "Gradient boosting (XGBoost, untuned)",
+      "month": 9,
+      "train_rows": 205642,
+      "valid_rows": 27010,
+      "train_end": "2013-08-31",
+      "valid_start": "2013-09-01",
+      "pr_auc": 0.16950739665921755,
+      "fit_seconds": 2.566759083000761
+    }
+  ],
+  "tradeoffs": [
+    {
+      "model": "Logistic regression",
+      "mean rolling PR AUC": 0.4083,
+      "mean fit time (s)": 3.63,
+      "interpretability": "high: coefficients",
+      "handles interactions / non-linearity": "only if engineered",
+      "missing values in this pipeline": "median imputation",
+      "scalability": "efficient; sparse one-hot inputs"
+    },
+    {
+      "model": "Decision tree",
+      "mean rolling PR AUC": 0.3279,
+      "mean fit time (s)": 1.86,
+      "interpretability": "high: depth-limited rules",
+      "handles interactions / non-linearity": "yes",
+      "missing values in this pipeline": "median imputation",
+      "scalability": "cheap prediction; limited capacity"
+    },
+    {
+      "model": "Random forest",
+      "mean rolling PR AUC": 0.3862,
+      "mean fit time (s)": 8.04,
+      "interpretability": "low: many trees",
+      "handles interactions / non-linearity": "yes",
+      "missing values in this pipeline": "median imputation",
+      "scalability": "parallel trees; higher memory"
+    },
+    {
+      "model": "Gradient boosting (XGBoost, untuned)",
+      "mean rolling PR AUC": 0.3659,
+      "mean fit time (s)": 2.34,
+      "interpretability": "medium: tree importance",
+      "handles interactions / non-linearity": "yes",
+      "missing values in this pipeline": "median imputation",
+      "scalability": "histogram splits; sequential boosting rounds"
+    }
+  ],
+  "best_rolling_model": "Logistic regression",
+  "selection_protocol": "Fixed configurations on Jul/Aug/Sep with fold-local preprocessing; September C/depth sweeps are separate. October is diagnostic only; Nov/Dec are not evaluated."
+}

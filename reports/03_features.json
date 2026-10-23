@@ -1,0 +1,386 @@
+{
+  "alpha": 10,
+  "n_numeric": 41,
+  "groups": {
+    "schedule": [
+      "dep_sin",
+      "dep_cos",
+      "arr_sin",
+      "arr_cos",
+      "sched_hour",
+      "log_distance",
+      "overnight_arrival"
+    ],
+    "calendar": [
+      "dow_sin",
+      "dow_cos",
+      "is_weekend",
+      "days_to_holiday"
+    ],
+    "aircraft": [
+      "plane_age",
+      "plane_seats",
+      "plane_engines"
+    ],
+    "congestion": [
+      "origin_hour_sched",
+      "origin_3h_sched",
+      "origin_day_sched",
+      "carrier_origin_day_sched",
+      "dest_arr_hour_sched"
+    ],
+    "history": [
+      "h_all_1d_rate",
+      "h_all_7d_rate",
+      "h_carrier_7d_rate",
+      "h_carrier_7d_logn",
+      "h_carrier_28d_rate",
+      "h_carrier_28d_logn",
+      "h_origin_1d_rate",
+      "h_origin_1d_logn",
+      "h_origin_7d_rate",
+      "h_origin_7d_logn",
+      "h_dest_28d_rate",
+      "h_dest_28d_logn",
+      "h_route_28d_rate",
+      "h_route_28d_logn",
+      "h_carrier_origin_7d_rate",
+      "h_carrier_origin_7d_logn",
+      "h_origin_hour_28d_rate",
+      "h_origin_hour_28d_logn",
+      "h_flight_28d_rate",
+      "h_flight_28d_logn",
+      "h_tail_7d_rate",
+      "h_tail_7d_logn"
+    ]
+  },
+  "leakage_tests": "\u001b[32m\u001b[32m\u001b[1m2 passed\u001b[0m\u001b[32m in 7.08s\u001b[0m\u001b[0m",
+  "group_table": [
+    {
+      "features": "schedule",
+      "n": 7,
+      "valid_pr_auc": 0.1918,
+      "calib_pr_auc": 0.2363
+    },
+    {
+      "features": "schedule + calendar",
+      "n": 11,
+      "valid_pr_auc": 0.2055,
+      "calib_pr_auc": 0.2727
+    },
+    {
+      "features": "schedule + calendar + aircraft",
+      "n": 14,
+      "valid_pr_auc": 0.2027,
+      "calib_pr_auc": 0.2786
+    },
+    {
+      "features": "schedule + calendar + aircraft + congestion",
+      "n": 19,
+      "valid_pr_auc": 0.2095,
+      "calib_pr_auc": 0.3044
+    },
+    {
+      "features": "schedule + calendar + aircraft + congestion + history",
+      "n": 41,
+      "valid_pr_auc": 0.261,
+      "calib_pr_auc": 0.3065
+    }
+  ],
+  "mutual_info_top10": {
+    "h_origin_hour_28d_rate": 0.0921,
+    "h_carrier_7d_rate": 0.0757,
+    "h_carrier_origin_7d_rate": 0.0732,
+    "h_carrier_28d_rate": 0.0716,
+    "h_origin_7d_rate": 0.0598,
+    "h_origin_1d_rate": 0.0578,
+    "h_all_1d_rate": 0.0528,
+    "h_dest_28d_rate": 0.0522,
+    "h_all_7d_rate": 0.0505,
+    "h_carrier_28d_logn": 0.0494
+  },
+  "filter_table": [
+    {
+      "top_k_by_MI": 5,
+      "valid_pr_auc": 0.1869,
+      "calib_pr_auc": 0.2732
+    },
+    {
+      "top_k_by_MI": 10,
+      "valid_pr_auc": 0.2396,
+      "calib_pr_auc": 0.2634
+    },
+    {
+      "top_k_by_MI": 20,
+      "valid_pr_auc": 0.2506,
+      "calib_pr_auc": 0.2793
+    },
+    {
+      "top_k_by_MI": 30,
+      "valid_pr_auc": 0.2559,
+      "calib_pr_auc": 0.299
+    },
+    {
+      "top_k_by_MI": 41,
+      "valid_pr_auc": 0.261,
+      "calib_pr_auc": 0.3065
+    }
+  ],
+  "vif": {
+    "n_above_10": 13,
+    "top5": {
+      "h_carrier_7d_logn": 67.2,
+      "h_carrier_28d_logn": 66.3,
+      "dep_sin": 55.4,
+      "arr_cos": 37.5,
+      "sched_hour": 24.3
+    },
+    "dropped": [
+      [
+        "h_carrier_7d_logn",
+        67.2
+      ],
+      [
+        "dep_sin",
+        55.4
+      ],
+      [
+        "arr_cos",
+        20.8
+      ],
+      [
+        "sched_hour",
+        14.6
+      ],
+      [
+        "h_carrier_7d_rate",
+        14.2
+      ],
+      [
+        "carrier_origin_day_sched",
+        11.2
+      ],
+      [
+        "h_origin_7d_rate",
+        11.2
+      ]
+    ],
+    "valid_all": 0.261,
+    "valid_after_vif": 0.2558,
+    "calib_all": 0.3065,
+    "calib_after_vif": 0.3016
+  },
+  "sfs": {
+    "best_k": 12,
+    "selected": [
+      "h_origin_1d_rate",
+      "dep_sin",
+      "origin_day_sched",
+      "h_origin_1d_logn",
+      "dow_cos",
+      "plane_age",
+      "days_to_holiday",
+      "is_weekend",
+      "overnight_arrival",
+      "log_distance",
+      "h_origin_7d_rate",
+      "h_route_28d_rate"
+    ],
+    "valid_sfs": 0.2789,
+    "calib_sfs": 0.2812,
+    "valid_all": 0.261,
+    "calib_all": 0.3065
+  },
+  "sfs_path": [
+    {
+      "step": 1,
+      "added": "h_origin_1d_rate",
+      "valid_pr_auc": 0.2084575768998567
+    },
+    {
+      "step": 2,
+      "added": "dep_sin",
+      "valid_pr_auc": 0.24641296197987805
+    },
+    {
+      "step": 3,
+      "added": "origin_day_sched",
+      "valid_pr_auc": 0.2563686099722886
+    },
+    {
+      "step": 4,
+      "added": "h_origin_1d_logn",
+      "valid_pr_auc": 0.2641913197598712
+    },
+    {
+      "step": 5,
+      "added": "dow_cos",
+      "valid_pr_auc": 0.2679008294180131
+    },
+    {
+      "step": 6,
+      "added": "plane_age",
+      "valid_pr_auc": 0.269602690636573
+    },
+    {
+      "step": 7,
+      "added": "days_to_holiday",
+      "valid_pr_auc": 0.2709243955052332
+    },
+    {
+      "step": 8,
+      "added": "is_weekend",
+      "valid_pr_auc": 0.27213221073323535
+    },
+    {
+      "step": 9,
+      "added": "overnight_arrival",
+      "valid_pr_auc": 0.27280575573244226
+    },
+    {
+      "step": 10,
+      "added": "log_distance",
+      "valid_pr_auc": 0.27356218232628515
+    },
+    {
+      "step": 11,
+      "added": "h_origin_7d_rate",
+      "valid_pr_auc": 0.27413779718649556
+    },
+    {
+      "step": 12,
+      "added": "h_route_28d_rate",
+      "valid_pr_auc": 0.27766920292779484
+    }
+  ],
+  "embedded_l1": [
+    {
+      "C": 0.0005,
+      "nonzero": 10,
+      "valid_pr_auc": 0.2414,
+      "calib_pr_auc": 0.2911
+    },
+    {
+      "C": 0.002,
+      "nonzero": 25,
+      "valid_pr_auc": 0.2569,
+      "calib_pr_auc": 0.302
+    },
+    {
+      "C": 0.01,
+      "nonzero": 36,
+      "valid_pr_auc": 0.2616,
+      "calib_pr_auc": 0.3055
+    },
+    {
+      "C": 0.1,
+      "nonzero": 41,
+      "valid_pr_auc": 0.2611,
+      "calib_pr_auc": 0.3064
+    }
+  ],
+  "l1_kept_at_C0.002": [
+    "dep_sin",
+    "arr_sin",
+    "sched_hour",
+    "dow_cos",
+    "is_weekend",
+    "days_to_holiday",
+    "plane_age",
+    "plane_seats",
+    "origin_3h_sched",
+    "origin_day_sched",
+    "carrier_origin_day_sched",
+    "dest_arr_hour_sched",
+    "h_all_1d_rate",
+    "h_all_7d_rate",
+    "h_carrier_7d_rate",
+    "h_origin_1d_rate",
+    "h_origin_1d_logn",
+    "h_origin_7d_rate",
+    "h_origin_7d_logn",
+    "h_dest_28d_rate",
+    "h_carrier_origin_7d_rate",
+    "h_origin_hour_28d_rate",
+    "h_origin_hour_28d_logn",
+    "h_flight_28d_rate",
+    "h_flight_28d_logn"
+  ],
+  "pca_table": [
+    {
+      "components": 5,
+      "variance_kept": 0.501,
+      "valid_pr_auc": 0.1928,
+      "calib_pr_auc": 0.2837
+    },
+    {
+      "components": 10,
+      "variance_kept": 0.701,
+      "valid_pr_auc": 0.2225,
+      "calib_pr_auc": 0.284
+    },
+    {
+      "components": 20,
+      "variance_kept": 0.909,
+      "valid_pr_auc": 0.2504,
+      "calib_pr_auc": 0.2803
+    },
+    {
+      "components": 24,
+      "variance_kept": 0.951,
+      "valid_pr_auc": 0.2677,
+      "calib_pr_auc": 0.2919
+    },
+    {
+      "components": 41,
+      "variance_kept": 1.0,
+      "valid_pr_auc": 0.2608,
+      "calib_pr_auc": 0.3065
+    }
+  ],
+  "pca_k95": 24,
+  "decision": [
+    {
+      "method": "all features",
+      "n": 41,
+      "valid": 0.261,
+      "calib": 0.3065,
+      "beats_all_on_both": false
+    },
+    {
+      "method": "filter: top 10 by MI",
+      "n": 10,
+      "valid": 0.2396,
+      "calib": 0.2634,
+      "beats_all_on_both": false
+    },
+    {
+      "method": "VIF pruning (<= 10)",
+      "n": 34,
+      "valid": 0.2558,
+      "calib": 0.3016,
+      "beats_all_on_both": false
+    },
+    {
+      "method": "wrapper: SFS (12)",
+      "n": 12,
+      "valid": 0.2789,
+      "calib": 0.2812,
+      "beats_all_on_both": false
+    },
+    {
+      "method": "embedded: L1, C=0.002",
+      "n": 25,
+      "valid": 0.2569,
+      "calib": 0.302,
+      "beats_all_on_both": false
+    },
+    {
+      "method": "PCA (24 comps, 95% var)",
+      "n": 24,
+      "valid": 0.2677,
+      "calib": 0.2919,
+      "beats_all_on_both": false
+    }
+  ]
+}

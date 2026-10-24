@@ -66,7 +66,7 @@ def build_features(df: pd.DataFrame, alpha: float = 10.0):
     g["schedule"] = ["dep_sin", "dep_cos", "arr_sin", "arr_cos", "sched_hour", "log_distance", "overnight_arrival"]
 
     # calendar (no month / day-of-year: test months never appear in training, so they act as date IDs)
-    dow = X["date"].dt.dayofweek
+    dow = X["date"].dt.day_of_week
     X["dow_sin"], X["dow_cos"] = np.sin(2 * np.pi * dow / 7), np.cos(2 * np.pi * dow / 7)
     X["is_weekend"] = (dow >= 5).astype(int)
     hol = USFederalHolidayCalendar().holidays("2012-12-01", "2014-01-31").values

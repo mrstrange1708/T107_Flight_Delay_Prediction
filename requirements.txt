@@ -7,3 +7,4 @@ scipy>=1.11
 statsmodels>=0.14
 matplotlib>=3.8
 pytest>=8
+ipykernel>=6        # lets a local .venv run the notebooks; Colab already has it

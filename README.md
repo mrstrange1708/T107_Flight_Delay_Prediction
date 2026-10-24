@@ -7,6 +7,14 @@
 4. Run tests: `pytest tests/`
 5. Build the report: `python report/build_report.py`
 
+## Local setup (one environment for everyone)
+```
+python3.12 -m venv .venv          # 3.12 = Colab's version
+.venv/bin/pip install -r requirements.txt
+```
+Pick `.venv` as the notebook kernel. Notebooks are committed with the generic `python3`
+kernelspec; don't commit a personal kernel name. On macOS XGBoost also needs `brew install libomp`.
+
 ## Folder map
 ```
 ├── README.md                     how to run, folder map, decisions
@@ -25,7 +33,7 @@
 │   ├── features.py  selection.py
 │   ├── baselines.py
 │   └── boosting.py
-├── tests/test_leakage.py
+├── tests/test_leakage.py  test_baselines.py
 ├── reports/
 │   ├── 01_problem_data.json … 05_boosting_evaluation.json
 │   └── figures/0N_*.png

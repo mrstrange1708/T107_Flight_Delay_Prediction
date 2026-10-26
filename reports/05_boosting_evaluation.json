@@ -1,15 +1,5 @@
 {
   "best_C_lr": 0.001,
-  "scratch_vs_sklearn": {
-    "ours (from scratch)": {
-      "September log loss": 0.4165,
-      "September PR AUC": 0.208
-    },
-    "scikit-learn": {
-      "September log loss": 0.4165,
-      "September PR AUC": 0.208
-    }
-  },
   "early_stopping_trap": {
     "early-stop on the scored month (optimistic)": {
       "Jul": 0.5709,
@@ -24,6 +14,7 @@
       "mean": 0.3817
     }
   },
+  "grid_size": 288,
   "lr_rolling": [
     0.5565467767821326,
     0.40549145626807404,

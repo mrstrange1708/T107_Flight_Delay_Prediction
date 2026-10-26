@@ -1,9 +1,28 @@
 # data are downloaded by fdp.data.download_raw(); never commit them
 data/
+data/raw/
+
+# Python / Jupyter
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
-*_outputs.zip
-.DS_Store
+.pytest_cache/
 .venv/
+
+# LaTeX build files (report/main.pdf is kept)
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# large temporary outputs
+*_outputs.zip
+*.zip
+*.parquet
+*.pkl
+
+# OS / tools
+.DS_Store
 .omc/

@@ -5,7 +5,7 @@
 2. `pip install -r requirements.txt` (Colab already has most of these).
 3. Put the dataset in `data/`. It is gitignored and never committed.
 4. Run tests: `pytest tests/`
-5. Build the report and slide content: `python report/build_report.py` (writes `report/main.tex` and `report/slide_content.md`; compile the report in Overleaf or with `tectonic report/main.tex`)
+5. Build the report: `python report/build_report.py` (writes `report/main.tex`; compile it in Overleaf or with `tectonic report/main.tex`)
 
 ## Local setup (one environment for everyone)
 ```
@@ -14,11 +14,13 @@ python3.12 -m venv .venv          # 3.12 = Colab's version
 ```
 Pick `.venv` as the notebook kernel. Notebooks are committed with the generic `python3`
 kernelspec; don't commit a personal kernel name. On macOS XGBoost also needs `brew install libomp`.
+`requirements-lock.txt` lists the exact package versions used for the committed results.
 
 ## Folder map
 ```
 ├── README.md                     how to run, folder map, decisions
 ├── requirements.txt              Colab-compatible
+├── requirements-lock.txt         exact versions of the final run
 ├── .gitignore                    data/ never committed
 ├── notebooks/
 │   ├── 01_problem_data_split.ipynb
@@ -33,14 +35,12 @@ kernelspec; don't commit a personal kernel name. On macOS XGBoost also needs `br
 │   ├── features.py  selection.py
 │   ├── baselines.py
 │   └── boosting.py
-├── tests/test_leakage.py  test_baselines.py
+├── tests/test_leakage.py
 ├── reports/
 │   ├── 01_problem_data.json … 05_boosting_evaluation.json
 │   └── figures/0N_*.png
-├── report/
-│   ├── main.tex.tmpl  build_report.py  main.tex  main.pdf     IEEE report (numbers from reports/)
-│   ├── slide_content.md.tmpl  slide_content.md                   slide-by-slide content (numbers from reports/)
-└── docs/T107_Phase1_Guide.html
+└── report/
+    └── main.tex.tmpl  build_report.py  main.tex  main.pdf     IEEE report (numbers from reports/)
 ```
 
 ## Decisions

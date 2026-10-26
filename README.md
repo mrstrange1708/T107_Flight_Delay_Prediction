@@ -5,7 +5,8 @@
 2. `pip install -r requirements.txt` (Colab already has most of these).
 3. Put the dataset in `data/`. It is gitignored and never committed.
 4. Run tests: `pytest tests/`
-5. Build the report: `python report/build_report.py`
+5. Build the report: `python report/build_report.py` (writes `report/main.tex`; compile in Overleaf or with `tectonic report/main.tex`)
+6. Build the slides: `npm install pptxgenjs && node report/build_slides.js` (writes `report/T107_Phase1_Slides.pptx`)
 
 ## Local setup (one environment for everyone)
 ```
@@ -38,7 +39,8 @@ kernelspec; don't commit a personal kernel name. On macOS XGBoost also needs `br
 │   ├── 01_problem_data.json … 05_boosting_evaluation.json
 │   └── figures/0N_*.png
 ├── report/
-│   ├── main.tex.tmpl  build_report.py  main.tex     IEEE report (numbers from reports/)
+│   ├── main.tex.tmpl  build_report.py  main.tex  main.pdf     IEEE report (numbers from reports/)
+│   ├── build_slides.js  T107_Phase1_Slides.pptx                  slides (numbers from reports/)
 └── docs/T107_Phase1_Guide.html
 ```
 

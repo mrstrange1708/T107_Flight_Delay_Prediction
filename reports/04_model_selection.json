@@ -1,8 +1,8 @@
 {
   "run": {
     "quick_run": false,
-    "created_at_utc": "2026-10-23T10:58:05.127999+00:00",
-    "python": "3.14.7",
+    "created_at_utc": "2026-10-26T13:59:35.419505+00:00",
+    "python": "3.12.11",
     "numpy": "2.5.4",
     "pandas": "3.1.0",
     "scikit_learn": "1.9.1",
@@ -15,9 +15,7 @@
     },
     "test_evaluated": false,
     "metric": "average_precision_score",
-    "gd_epochs": 300,
-    "learning_rate_epochs": 100,
-    "sgd_sample_rows": 20000
+    "learning_rate_epochs": 100
   },
   "baselines": {
     "valid": {
@@ -31,32 +29,6 @@
       "rule_scheduled_hour": 0.2286
     }
   },
-  "gd_table": [
-    {
-      "method": "batch GD (lr 0.5)",
-      "epochs_run": 200,
-      "final_train_logloss": 0.5279,
-      "valid_pr_auc": 0.2632
-    },
-    {
-      "method": "mini-batch 256 (lr 0.05)",
-      "epochs_run": 5,
-      "final_train_logloss": 0.5282,
-      "valid_pr_auc": 0.2665
-    },
-    {
-      "method": "SGD, 20k rows (lr 0.01)",
-      "epochs_run": 2,
-      "final_train_logloss": 0.5459,
-      "valid_pr_auc": 0.2587
-    },
-    {
-      "method": "scikit-learn (lbfgs, same model)",
-      "epochs_run": 48,
-      "final_train_logloss": 0.5278,
-      "valid_pr_auc": 0.2612
-    }
-  ],
   "lr_effect_logloss": {
     "0.01": 0.6195,
     "0.1": 0.5335,
@@ -155,7 +127,7 @@
       "Aug": 0.4058,
       "Sep": 0.2624,
       "mean_pr_auc": 0.4083,
-      "fit_seconds": 3.63
+      "fit_seconds": 2.62
     },
     {
       "model": "Decision tree",
@@ -163,7 +135,7 @@
       "Aug": 0.3535,
       "Sep": 0.1446,
       "mean_pr_auc": 0.3279,
-      "fit_seconds": 1.86
+      "fit_seconds": 1.44
     },
     {
       "model": "Random forest",
@@ -171,7 +143,7 @@
       "Aug": 0.3887,
       "Sep": 0.2157,
       "mean_pr_auc": 0.3862,
-      "fit_seconds": 8.04
+      "fit_seconds": 6.3
     },
     {
       "model": "Gradient boosting (XGBoost, untuned)",
@@ -179,7 +151,7 @@
       "Aug": 0.3692,
       "Sep": 0.1695,
       "mean_pr_auc": 0.3659,
-      "fit_seconds": 2.34
+      "fit_seconds": 1.76
     }
   ],
   "rolling_parameters": {
@@ -211,7 +183,7 @@
       "train_end": "2013-06-30",
       "valid_start": "2013-07-01",
       "pr_auc": 0.5566097940767588,
-      "fit_seconds": 2.3831605830000626
+      "fit_seconds": 2.0053933750023134
     },
     {
       "model": "Logistic regression",
@@ -221,7 +193,7 @@
       "train_end": "2013-07-31",
       "valid_start": "2013-08-01",
       "pr_auc": 0.4057604207961282,
-      "fit_seconds": 3.9301983330005896
+      "fit_seconds": 2.7071824169979664
     },
     {
       "model": "Logistic regression",
@@ -231,7 +203,7 @@
       "train_end": "2013-08-31",
       "valid_start": "2013-09-01",
       "pr_auc": 0.2624064204938269,
-      "fit_seconds": 4.576405083999816
+      "fit_seconds": 3.133712666996871
     },
     {
       "model": "Decision tree",
@@ -241,7 +213,7 @@
       "train_end": "2013-06-30",
       "valid_start": "2013-07-01",
       "pr_auc": 0.48559279895140595,
-      "fit_seconds": 1.2804065000000264
+      "fit_seconds": 1.172407457997906
     },
     {
       "model": "Decision tree",
@@ -251,7 +223,7 @@
       "train_end": "2013-07-31",
       "valid_start": "2013-08-01",
       "pr_auc": 0.3534956211872347,
-      "fit_seconds": 1.712807249999969
+      "fit_seconds": 1.4072153750021243
     },
     {
       "model": "Decision tree",
@@ -261,7 +233,7 @@
       "train_end": "2013-08-31",
       "valid_start": "2013-09-01",
       "pr_auc": 0.14464828876403635,
-      "fit_seconds": 2.6015137080003115
+      "fit_seconds": 1.7454087079968303
     },
     {
       "model": "Random forest",
@@ -271,7 +243,7 @@
       "train_end": "2013-06-30",
       "valid_start": "2013-07-01",
       "pr_auc": 0.5541917704396376,
-      "fit_seconds": 7.211434249999911
+      "fit_seconds": 5.50833783300186
     },
     {
       "model": "Random forest",
@@ -281,7 +253,7 @@
       "train_end": "2013-07-31",
       "valid_start": "2013-08-01",
       "pr_auc": 0.38874647566641135,
-      "fit_seconds": 7.879374250000183
+      "fit_seconds": 5.896461917000124
     },
     {
       "model": "Random forest",
@@ -291,7 +263,7 @@
       "train_end": "2013-08-31",
       "valid_start": "2013-09-01",
       "pr_auc": 0.21567081946035557,
-      "fit_seconds": 9.031013207999422
+      "fit_seconds": 7.4899615830072435
     },
     {
       "model": "Gradient boosting (XGBoost, untuned)",
@@ -301,7 +273,7 @@
       "train_end": "2013-06-30",
       "valid_start": "2013-07-01",
       "pr_auc": 0.559123760297307,
-      "fit_seconds": 2.183995207999942
+      "fit_seconds": 1.638632707996294
     },
     {
       "model": "Gradient boosting (XGBoost, untuned)",
@@ -311,7 +283,7 @@
       "train_end": "2013-07-31",
       "valid_start": "2013-08-01",
       "pr_auc": 0.3691983579330767,
-      "fit_seconds": 2.2707766249995984
+      "fit_seconds": 1.669587957992917
     },
     {
       "model": "Gradient boosting (XGBoost, untuned)",
@@ -321,14 +293,14 @@
       "train_end": "2013-08-31",
       "valid_start": "2013-09-01",
       "pr_auc": 0.16950739665921755,
-      "fit_seconds": 2.566759083000761
+      "fit_seconds": 1.9650518330017803
     }
   ],
   "tradeoffs": [
     {
       "model": "Logistic regression",
       "mean rolling PR AUC": 0.4083,
-      "mean fit time (s)": 3.63,
+      "mean fit time (s)": 2.62,
       "interpretability": "high: coefficients",
       "handles interactions / non-linearity": "only if engineered",
       "missing values in this pipeline": "median imputation",
@@ -337,7 +309,7 @@
     {
       "model": "Decision tree",
       "mean rolling PR AUC": 0.3279,
-      "mean fit time (s)": 1.86,
+      "mean fit time (s)": 1.44,
       "interpretability": "high: depth-limited rules",
       "handles interactions / non-linearity": "yes",
       "missing values in this pipeline": "median imputation",
@@ -346,7 +318,7 @@
     {
       "model": "Random forest",
       "mean rolling PR AUC": 0.3862,
-      "mean fit time (s)": 8.04,
+      "mean fit time (s)": 6.3,
       "interpretability": "low: many trees",
       "handles interactions / non-linearity": "yes",
       "missing values in this pipeline": "median imputation",
@@ -355,7 +327,7 @@
     {
       "model": "Gradient boosting (XGBoost, untuned)",
       "mean rolling PR AUC": 0.3659,
-      "mean fit time (s)": 2.34,
+      "mean fit time (s)": 1.76,
       "interpretability": "medium: tree importance",
       "handles interactions / non-linearity": "yes",
       "missing values in this pipeline": "median imputation",

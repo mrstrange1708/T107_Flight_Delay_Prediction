@@ -13,6 +13,7 @@ Decisions are numbered 1–35 in the order they were taken. The same numbers are
 - **Title:** Flight Delay Prediction at 05:00
 - **Subtitle:** Gradient boosting against strong baselines on 336,776 NYC flights (2013)
 - **Line 3:** Team T107 · Section D · Project 21 · Advanced Machine Learning, Phase 1
+- **Line 4:** Newton School of Technology
 - **Say:** "We predict, before the first departure of the day, which flights will arrive at least 15 minutes late, using only information that exists at 05:00."
 
 ---
@@ -617,7 +618,7 @@ Decisions are numbered 1–35 in the order they were taken. The same numbers are
 
 ---
 
-## Slide 21: Conclusion and Phase 2
+## Slide 21: Conclusion
 
 **Headline:** At 05:00, boosting does not beat a well-regularised linear model, and we can show why
 
@@ -626,11 +627,6 @@ Decisions are numbered 1–35 in the order they were taken. The same numbers are
 - Honest tuning mattered: the early-stopping shortcut would have overstated boosting by 0.020
 - Seasonal drift in absolute delay-rate levels is why trees transfer worse than a linear model
 
-**Phase 2 plan:**
-1. Drift-robust history: each rate relative to the all-flights rate of the same window; re-run the October ablation
-2. Temporal deep learning: recurrent or temporal-convolution model over each airport's and carrier's daily delay sequence, same rolling protocol
-3. Weather known by 05:00: previous-day observations from the dataset's hourly weather table
-4. Paired day-block bootstrap differences, so "no winner" becomes a measured interval
 
 ---
 

@@ -12,7 +12,7 @@ from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, RobustScaler, S
 
 
 def linear_preprocessor(numeric, categorical, scaler: str = "standard"):
-    """For gradient-based / linear models (logistic regression, our GD code).
+    """For gradient-based / linear models (logistic regression).
 
     numeric:     median imputation + missing-indicator column, then scaling (z-score or robust).
     categorical: one-hot; categories seen < 50 times in training are grouped as 'infrequent',

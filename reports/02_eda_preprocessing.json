@@ -93,7 +93,7 @@
     "lag1": 0.345,
     "lag2": -0.109
   },
-  "adf_p": 2.394529753015547e-16,
+  "adf_p": 2.3945297530155986e-16,
   "train_delay_rate": 0.2681,
   "scaler_comparison": {
     "standard": {

@@ -54,7 +54,7 @@
       "h_tail_7d_logn"
     ]
   },
-  "leakage_tests": "\u001b[32m\u001b[32m\u001b[1m2 passed\u001b[0m\u001b[32m in 7.08s\u001b[0m\u001b[0m",
+  "leakage_tests": "2 passed in 2.00s",
   "group_table": [
     {
       "features": "schedule",
@@ -200,57 +200,57 @@
     {
       "step": 2,
       "added": "dep_sin",
-      "valid_pr_auc": 0.24641296197987805
+      "valid_pr_auc": 0.24641228637926316
     },
     {
       "step": 3,
       "added": "origin_day_sched",
-      "valid_pr_auc": 0.2563686099722886
+      "valid_pr_auc": 0.2563653253897639
     },
     {
       "step": 4,
       "added": "h_origin_1d_logn",
-      "valid_pr_auc": 0.2641913197598712
+      "valid_pr_auc": 0.2642011696160274
     },
     {
       "step": 5,
       "added": "dow_cos",
-      "valid_pr_auc": 0.2679008294180131
+      "valid_pr_auc": 0.26791793301008615
     },
     {
       "step": 6,
       "added": "plane_age",
-      "valid_pr_auc": 0.269602690636573
+      "valid_pr_auc": 0.2696038939289855
     },
     {
       "step": 7,
       "added": "days_to_holiday",
-      "valid_pr_auc": 0.2709243955052332
+      "valid_pr_auc": 0.27092577134563706
     },
     {
       "step": 8,
       "added": "is_weekend",
-      "valid_pr_auc": 0.27213221073323535
+      "valid_pr_auc": 0.2721325710951199
     },
     {
       "step": 9,
       "added": "overnight_arrival",
-      "valid_pr_auc": 0.27280575573244226
+      "valid_pr_auc": 0.2728064173073006
     },
     {
       "step": 10,
       "added": "log_distance",
-      "valid_pr_auc": 0.27356218232628515
+      "valid_pr_auc": 0.27356087022423986
     },
     {
       "step": 11,
       "added": "h_origin_7d_rate",
-      "valid_pr_auc": 0.27413779718649556
+      "valid_pr_auc": 0.2741352200501468
     },
     {
       "step": 12,
       "added": "h_route_28d_rate",
-      "valid_pr_auc": 0.27766920292779484
+      "valid_pr_auc": 0.27766928314604394
     }
   ],
   "embedded_l1": [

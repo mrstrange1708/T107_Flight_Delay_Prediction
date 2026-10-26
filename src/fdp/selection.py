@@ -34,7 +34,7 @@ def lr_score(Xtr, ytr, Xva, yva, cols, C=1.0):
 
 
 def sequential_forward_selection(Xtr, ytr, Xva, yva, candidates, max_features=15, verbose=True):
-    """Wrapper method from scratch: start empty, add the feature that most improves validation PR AUC."""
+    """Wrapper method: start empty, add the feature that most improves validation PR AUC."""
     selected, remaining, path = [], list(candidates), []
     for step in range(max_features):
         scores = {f: lr_score(Xtr, ytr, Xva, yva, selected + [f]) for f in remaining}

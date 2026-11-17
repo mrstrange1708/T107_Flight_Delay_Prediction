@@ -13,7 +13,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
 
 from . import config
-from .boosting import as_xgb_frame, make_xgb
+from .boosting import as_xgb_frame, new_xgb
 from .preprocess import linear_preprocessor
 
 
@@ -26,8 +26,8 @@ class Phase1Models:
         self.lr = make_pipeline(linear_preprocessor(self.num, self.cat),
                                 LogisticRegression(C=config.PHASE1_LR_C, max_iter=3000)).fit(frame[self.num + self.cat], y)
         F = as_xgb_frame(frame, self.num, self.cat, self.cats)
-        self.xgb = make_xgb(config.PHASE1_XGB, config.PHASE1_XGB_TREES, config.SEED).fit(F, y)
-        self.hyb = make_xgb(config.PHASE1_XGB, config.PHASE1_HYBRID_TREES, config.SEED).fit(
+        self.xgb = new_xgb(config.PHASE1_XGB, config.PHASE1_XGB_TREES, seed=config.SEED).fit(F, y)
+        self.hyb = new_xgb(config.PHASE1_XGB, config.PHASE1_HYBRID_TREES, seed=config.SEED).fit(
             F, y, base_margin=self.lr.decision_function(frame[self.num + self.cat]))
         return self
 

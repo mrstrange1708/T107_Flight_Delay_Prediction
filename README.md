@@ -3,7 +3,7 @@
 ## How to run
 1. Open the notebooks in `notebooks/` in order (01 → 10), in Colab or locally. Notebooks 08 and 09 are slow on a CPU (use a Colab GPU runtime, or tick `QUICK_RUN` for a check).
 2. `pip install -r requirements.txt` (Colab already has most of these).
-3. Put the dataset in `data/`. It is gitignored and never committed.
+3. The dataset downloads itself into `data/raw/` on the first run (`fdp.data.download_raw()`). It is gitignored and never committed.
 4. Run tests: `pytest tests/`
 5. Build the report: `python report/build_report.py` (writes `report/main.tex`; compile it in Overleaf or with `tectonic report/main.tex`)
 

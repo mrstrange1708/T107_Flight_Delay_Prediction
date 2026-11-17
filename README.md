@@ -5,7 +5,9 @@
 2. `pip install -r requirements.txt` (Colab already has most of these).
 3. The dataset downloads itself into `data/raw/` on the first run (`fdp.data.download_raw()`). It is gitignored and never committed.
 4. Run tests: `pytest tests/`
-5. Build the report: `python report/build_report.py` (writes `report/main.tex`; compile it in Overleaf or with `tectonic report/main.tex`)
+5. Build the reports (compile the `.tex` in Overleaf or with `tectonic`):
+   - Phase 1: `python report/build_report.py` → `report/main.tex`
+   - Phase 2: `python report/arima_check.py` (writes `reports/06_arima.json`, ~1 min), then `python report/build_phase2.py` → `report/phase2.tex`
 
 ## Local setup (one environment for everyone)
 ```
@@ -45,10 +47,11 @@ kernelspec; don't commit a personal kernel name. On macOS XGBoost also needs `br
 │   └── calibration.py  rescheduling.py
 ├── tests/test_leakage.py
 ├── reports/
-│   ├── 01_problem_data.json … 10_final_rescheduling.json
+│   ├── 01_problem_data.json … 10_final_rescheduling.json, 06_arima.json
 │   └── figures/0N_*.png
 └── report/
-    └── main.tex.tmpl  build_report.py  main.tex  main.pdf     IEEE report (numbers from reports/)
+    ├── main.tex.tmpl  build_report.py  main.tex  main.pdf     Phase 1 IEEE report (numbers from reports/)
+    └── phase2.tex.tmpl  build_phase2.py  arima_check.py  phase2.tex  phase2.pdf     Phase 2 IEEE report
 ```
 
 ## Decisions

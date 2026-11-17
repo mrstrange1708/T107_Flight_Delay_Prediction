@@ -1,0 +1,377 @@
+{
+  "final_epochs": {
+    "MLP + embeddings": 6,
+    "Temporal: GRU replaces hand history": 16,
+    "Hybrid: LR + temporal correction": 11
+  },
+  "calibration_choice": "temperature",
+  "test_base_rate": 0.2583023096442,
+  "test_table": [
+    {
+      "model": "Majority class",
+      "pr_auc": 0.2583023096442,
+      "roc_auc": 0.5,
+      "brier": 0.19167749646633983,
+      "log_loss": 0.5715183768588644,
+      "ece": 0.009760634695963888,
+      "base_rate": 0.2583023096442,
+      "lift": 1.0,
+      "ci_low": NaN,
+      "ci_high": NaN,
+      "ece_raw": NaN,
+      "diff_vs_lr": NaN,
+      "diff_ci_low": NaN,
+      "diff_ci_high": NaN
+    },
+    {
+      "model": "Rule: flight's 28-day delay rate",
+      "pr_auc": 0.36918641164177246,
+      "roc_auc": 0.6381509771462648,
+      "brier": 0.18428128289164528,
+      "log_loss": 0.5533439188676864,
+      "ece": 0.03600956630438619,
+      "base_rate": 0.2583023096442,
+      "lift": 1.4292803349312302,
+      "ci_low": NaN,
+      "ci_high": NaN,
+      "ece_raw": NaN,
+      "diff_vs_lr": NaN,
+      "diff_ci_low": NaN,
+      "diff_ci_high": NaN
+    },
+    {
+      "model": "Logistic regression",
+      "pr_auc": 0.4031868257689134,
+      "roc_auc": 0.6701482773655058,
+      "brier": 0.1795498073090362,
+      "log_loss": 0.5414076520519066,
+      "ece": 0.0337224248599694,
+      "base_rate": 0.2583023096442,
+      "lift": 1.5609106489380038,
+      "ci_low": 0.35115388657041513,
+      "ci_high": 0.4585240406499051,
+      "ece_raw": 0.028936306634069694,
+      "diff_vs_lr": 0.0,
+      "diff_ci_low": NaN,
+      "diff_ci_high": NaN
+    },
+    {
+      "model": "XGBoost (Phase 1)",
+      "pr_auc": 0.38594734328560576,
+      "roc_auc": 0.6525684392022978,
+      "brier": 0.18349320834933952,
+      "log_loss": 0.5495242916184447,
+      "ece": 0.04573100155949823,
+      "base_rate": 0.2583023096442,
+      "lift": 1.4941691532577899,
+      "ci_low": 0.3317610558269392,
+      "ci_high": 0.44719756532216626,
+      "ece_raw": 0.033377332699625686,
+      "diff_vs_lr": -0.017239482483307644,
+      "diff_ci_low": -0.04592995452520469,
+      "diff_ci_high": 0.012601324931390809
+    },
+    {
+      "model": "Hybrid: XGBoost from LR (Phase 1)",
+      "pr_auc": 0.40396720382835083,
+      "roc_auc": 0.6701896208583786,
+      "brier": 0.17927458617428368,
+      "log_loss": 0.5404059317383798,
+      "ece": 0.029707024924126038,
+      "base_rate": 0.2583023096442,
+      "lift": 1.5639318300513758,
+      "ci_low": 0.35241366548303865,
+      "ci_high": 0.4599113966922673,
+      "ece_raw": 0.027678910263455075,
+      "diff_vs_lr": 0.0007803780594374254,
+      "diff_ci_low": -0.0025075485787028435,
+      "diff_ci_high": 0.003595802188770527
+    },
+    {
+      "model": "MLP + embeddings",
+      "pr_auc": 0.4250115852196545,
+      "roc_auc": 0.6807417680493069,
+      "brier": 0.17639827718095508,
+      "log_loss": 0.5327661349347484,
+      "ece": 0.018358159137359324,
+      "base_rate": 0.2583023096442,
+      "lift": 1.6454037356657367,
+      "ci_low": 0.36314195847573066,
+      "ci_high": 0.48293331108963994,
+      "ece_raw": 0.03188883398787865,
+      "diff_vs_lr": 0.021824759450741082,
+      "diff_ci_low": 0.004491113563817384,
+      "diff_ci_high": 0.035556746863957246
+    },
+    {
+      "model": "Temporal: GRU replaces hand history",
+      "pr_auc": 0.42396739583142606,
+      "roc_auc": 0.686315913563253,
+      "brier": 0.17797074655647827,
+      "log_loss": 0.53586155696809,
+      "ece": 0.04083858419912101,
+      "base_rate": 0.2583023096442,
+      "lift": 1.6413612267556663,
+      "ci_low": 0.360007232961541,
+      "ci_high": 0.48013668542426113,
+      "ece_raw": 0.02863766940838212,
+      "diff_vs_lr": 0.02078057006251266,
+      "diff_ci_low": 0.002045059443065165,
+      "diff_ci_high": 0.037354863395068584
+    },
+    {
+      "model": "Hybrid: LR + temporal correction",
+      "pr_auc": 0.41722374875907475,
+      "roc_auc": 0.6839884346373059,
+      "brier": 0.17745207753608036,
+      "log_loss": 0.5351750012510281,
+      "ece": 0.03471484627054397,
+      "base_rate": 0.2583023096442,
+      "lift": 1.6152536511724656,
+      "ci_low": 0.36373785928691027,
+      "ci_high": 0.47051076725495333,
+      "ece_raw": 0.03313134684140971,
+      "diff_vs_lr": 0.014036922990161349,
+      "diff_ci_low": 0.0020772721457206224,
+      "diff_ci_high": 0.027572712834680928
+    }
+  ],
+  "lift_by_month": [
+    {
+      "model": "Hybrid: LR + temporal correction",
+      "December": 1.4,
+      "November": 1.64
+    },
+    {
+      "model": "Hybrid: XGBoost from LR (Phase 1)",
+      "December": 1.36,
+      "November": 1.56
+    },
+    {
+      "model": "Logistic regression",
+      "December": 1.35,
+      "November": 1.58
+    },
+    {
+      "model": "MLP + embeddings",
+      "December": 1.45,
+      "November": 1.56
+    },
+    {
+      "model": "Temporal: GRU replaces hand history",
+      "December": 1.45,
+      "November": 1.61
+    },
+    {
+      "model": "XGBoost (Phase 1)",
+      "December": 1.31,
+      "November": 1.36
+    }
+  ],
+  "business": [
+    {
+      "model": "Logistic regression",
+      "rule": "(a) October cut-off for precision 0.5",
+      "precision": 0.5378681626928471,
+      "recall": 0.05499784884554711,
+      "flagged per 1,000": 26.41180937563668,
+      "really late among them": 14.206071382267414,
+      "random list would catch": 6.82223136360929
+    },
+    {
+      "model": "Logistic regression",
+      "rule": "(b) calibrated p >= 0.5",
+      "precision": 0.5193452380952381,
+      "recall": 0.10010038720780152,
+      "flagged per 1,000": 49.786075457020615,
+      "really late among them": 25.856161212053863,
+      "random list would catch": 12.859858278668844
+    },
+    {
+      "model": "XGBoost (Phase 1)",
+      "rule": "(a) October cut-off for precision 0.5",
+      "precision": 0.5301624129930395,
+      "recall": 0.06553850566470673,
+      "flagged per 1,000": 31.93124780055935,
+      "really late among them": 16.92874738382323,
+      "random list would catch": 8.24791505670576
+    },
+    {
+      "model": "XGBoost (Phase 1)",
+      "rule": "(b) calibrated p >= 0.5",
+      "precision": 0.0,
+      "recall": 0.0,
+      "flagged per 1,000": 0.0,
+      "really late among them": 0.0,
+      "random list would catch": 0.0
+    },
+    {
+      "model": "Hybrid: XGBoost from LR (Phase 1)",
+      "rule": "(a) October cut-off for precision 0.5",
+      "precision": 0.5477207977207977,
+      "recall": 0.055141259142406425,
+      "flagged per 1,000": 26.004334055675947,
+      "really late among them": 14.243114593172937,
+      "random list would catch": 6.716979547340423
+    },
+    {
+      "model": "Hybrid: XGBoost from LR (Phase 1)",
+      "rule": "(b) calibrated p >= 0.5",
+      "precision": 0.520528382720457,
+      "recall": 0.10454610641044026,
+      "flagged per 1,000": 51.879016873182564,
+      "really late among them": 27.00450075012502,
+      "random list would catch": 13.400469880413478
+    },
+    {
+      "model": "MLP + embeddings",
+      "rule": "(a) October cut-off for precision 0.5",
+      "precision": 0.6237721021611002,
+      "recall": 0.04553276925283235,
+      "flagged per 1,000": 18.854994350910335,
+      "really late among them": 11.761219462503009,
+      "random list would catch": 4.870288589168482
+    },
+    {
+      "model": "MLP + embeddings",
+      "rule": "(b) calibrated p >= 0.5",
+      "precision": 0.5652011922503726,
+      "recall": 0.10877671016779004,
+      "flagged per 1,000": 49.71198903520957,
+      "really late among them": 28.097275471837897,
+      "random list would catch": 12.840721584801777
+    },
+    {
+      "model": "Temporal: GRU replaces hand history",
+      "rule": "(a) October cut-off for precision 0.5",
+      "precision": 0.637137989778535,
+      "recall": 0.02681772551269181,
+      "flagged per 1,000": 10.8721824007705,
+      "really late among them": 6.9270804393324825,
+      "random list would catch": 2.808309824992043
+    },
+    {
+      "model": "Temporal: GRU replaces hand history",
+      "rule": "(b) calibrated p >= 0.5",
+      "precision": 0.4906410468775882,
+      "recall": 0.21239064964864476,
+      "flagged per 1,000": 111.81493211831602,
+      "really late among them": 54.86099535107704,
+      "random list would catch": 28.882055218870466
+    },
+    {
+      "model": "Hybrid: LR + temporal correction",
+      "rule": "(a) October cut-off for precision 0.5",
+      "precision": 0.0,
+      "recall": 0.0,
+      "flagged per 1,000": 0.0,
+      "really late among them": 0.0,
+      "random list would catch": 0.0
+    },
+    {
+      "model": "Hybrid: LR + temporal correction",
+      "rule": "(b) calibrated p >= 0.5",
+      "precision": 0.526227208976157,
+      "recall": 0.134518858454037,
+      "flagged per 1,000": 66.0295234390917,
+      "really late among them": 34.746531829378974,
+      "random list would catch": 17.055578409023227
+    }
+  ],
+  "buffer_min": 15,
+  "k_flagged": 3565,
+  "n_test": 53991,
+  "policies": [
+    {
+      "policy": "hybrid flags",
+      "late arrivals avoided": 555.0,
+      "delay minutes absorbed": 33435.0,
+      "avoided per 1,000 flights": 10.279491026282159,
+      "share of all late arrivals avoided": 0.039796357378459775,
+      "share of buffer minutes used": 0.6252454417952314
+    },
+    {
+      "policy": "logistic regression flags",
+      "late arrivals avoided": 546.0,
+      "delay minutes absorbed": 32370.0,
+      "avoided per 1,000 flights": 10.112796577207313,
+      "share of all late arrivals avoided": 0.03915101104259286,
+      "share of buffer minutes used": 0.6053295932678822
+    },
+    {
+      "policy": "planner rule (28-day rate)",
+      "late arrivals avoided": 528.0,
+      "delay minutes absorbed": 29299.0,
+      "avoided per 1,000 flights": 9.77940767905762,
+      "share of all late arrivals avoided": 0.03786031837085903,
+      "share of buffer minutes used": 0.5479008882655446
+    },
+    {
+      "policy": "random flights",
+      "late arrivals avoided": 349.38,
+      "delay minutes absorbed": 18325.49,
+      "avoided per 1,000 flights": 6.471078513085514,
+      "share of all late arrivals avoided": 0.025052344758353648,
+      "share of buffer minutes used": 0.34269266012155214
+    }
+  ],
+  "sweep": [
+    {
+      "buffer (min)": 5,
+      "late arrivals avoided": 207,
+      "still late after the buffer": 1669,
+      "padded but on time anyway": 1689,
+      "avoided per 1,000 buffer minutes": 11.612903225806452,
+      "share of buffer minutes used": 0.6996914446002805
+    },
+    {
+      "buffer (min)": 10,
+      "late arrivals avoided": 391,
+      "still late after the buffer": 1485,
+      "padded but on time anyway": 1689,
+      "avoided per 1,000 buffer minutes": 10.96774193548387,
+      "share of buffer minutes used": 0.6617391304347826
+    },
+    {
+      "buffer (min)": 15,
+      "late arrivals avoided": 555,
+      "still late after the buffer": 1321,
+      "padded but on time anyway": 1689,
+      "avoided per 1,000 buffer minutes": 10.378681626928472,
+      "share of buffer minutes used": 0.6252454417952314
+    },
+    {
+      "buffer (min)": 20,
+      "late arrivals avoided": 687,
+      "still late after the buffer": 1189,
+      "padded but on time anyway": 1689,
+      "avoided per 1,000 buffer minutes": 9.635343618513325,
+      "share of buffer minutes used": 0.5917671809256662
+    },
+    {
+      "buffer (min)": 30,
+      "late arrivals avoided": 919,
+      "still late after the buffer": 957,
+      "padded but on time anyway": 1689,
+      "avoided per 1,000 buffer minutes": 8.592800374006545,
+      "share of buffer minutes used": 0.5325759700794764
+    },
+    {
+      "buffer (min)": 45,
+      "late arrivals avoided": 1149,
+      "still late after the buffer": 727,
+      "padded but on time anyway": 1689,
+      "avoided per 1,000 buffer minutes": 7.162225338943432,
+      "share of buffer minutes used": 0.4595044413277232
+    },
+    {
+      "buffer (min)": 60,
+      "late arrivals avoided": 1313,
+      "still late after the buffer": 563,
+      "padded but on time anyway": 1689,
+      "avoided per 1,000 buffer minutes": 6.13838242169238,
+      "share of buffer minutes used": 0.4025525946704067
+    }
+  ],
+  "quick_run": false
+}

@@ -1,0 +1,135 @@
+{
+  "split_sizes": {
+    "train": 205642,
+    "valid": 27010,
+    "calib": 28618,
+    "test": 53991
+  },
+  "n_numeric": 41,
+  "numeric_block_width": 42,
+  "categories": [
+    {
+      "column": "carrier",
+      "categories in training": 16,
+      "table rows (incl. unknown + rare)": 17,
+      "embedding size": 8,
+      "one-hot width": 17
+    },
+    {
+      "column": "origin",
+      "categories in training": 3,
+      "table rows (incl. unknown + rare)": 5,
+      "embedding size": 4,
+      "one-hot width": 5
+    },
+    {
+      "column": "dest",
+      "categories in training": 102,
+      "table rows (incl. unknown + rare)": 94,
+      "embedding size": 16,
+      "one-hot width": 94
+    }
+  ],
+  "seq_len": 14,
+  "seq_channels": [
+    "all_rate",
+    "all_logn",
+    "origin_rel",
+    "origin_logn",
+    "carrier_rel",
+    "carrier_logn",
+    "carrier_origin_rel",
+    "carrier_origin_logn",
+    "route_rel",
+    "route_logn",
+    "flight_rel",
+    "flight_logn",
+    "tail_rel",
+    "tail_logn",
+    "dow_sin",
+    "dow_cos"
+  ],
+  "n_channels": 16,
+  "seq_groups": [
+    "origin",
+    "carrier",
+    "carrier_origin",
+    "route",
+    "flight",
+    "tail"
+  ],
+  "seq_alpha": 5.0,
+  "train_seq_mb": 184.3,
+  "leak_tests_passed": true,
+  "drift_monthly": [
+    {
+      "month": 1,
+      "absolute: share above July's 75th percentile": 0.0,
+      "relative: share above July's 75th percentile": 0.365
+    },
+    {
+      "month": 2,
+      "absolute: share above July's 75th percentile": 0.0,
+      "relative: share above July's 75th percentile": 0.204
+    },
+    {
+      "month": 3,
+      "absolute: share above July's 75th percentile": 0.0,
+      "relative: share above July's 75th percentile": 0.289
+    },
+    {
+      "month": 4,
+      "absolute: share above July's 75th percentile": 0.165,
+      "relative: share above July's 75th percentile": 0.281
+    },
+    {
+      "month": 5,
+      "absolute: share above July's 75th percentile": 0.0,
+      "relative: share above July's 75th percentile": 0.186
+    },
+    {
+      "month": 6,
+      "absolute: share above July's 75th percentile": 0.043,
+      "relative: share above July's 75th percentile": 0.119
+    },
+    {
+      "month": 7,
+      "absolute: share above July's 75th percentile": 0.243,
+      "relative: share above July's 75th percentile": 0.244
+    },
+    {
+      "month": 8,
+      "absolute: share above July's 75th percentile": 0.057,
+      "relative: share above July's 75th percentile": 0.14
+    },
+    {
+      "month": 9,
+      "absolute: share above July's 75th percentile": 0.0,
+      "relative: share above July's 75th percentile": 0.051
+    },
+    {
+      "month": 10,
+      "absolute: share above July's 75th percentile": 0.0,
+      "relative: share above July's 75th percentile": 0.193
+    },
+    {
+      "month": 11,
+      "absolute: share above July's 75th percentile": 0.0,
+      "relative: share above July's 75th percentile": 0.157
+    },
+    {
+      "month": 12,
+      "absolute: share above July's 75th percentile": 0.27,
+      "relative: share above July's 75th percentile": 0.238
+    }
+  ],
+  "drift_range": {
+    "absolute: share above July's 75th percentile": 0.27,
+    "relative: share above July's 75th percentile": 0.314
+  },
+  "july_cuts": {
+    "absolute": 0.38866546274175773,
+    "relative": 0.02585822248446351
+  },
+  "quick_run": false
+}

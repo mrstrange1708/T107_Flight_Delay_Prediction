@@ -33,3 +33,13 @@ SPLITS = {
 CV_MONTHS = [7, 8, 9]
 
 CATEGORICAL = ["carrier", "origin", "dest"]
+
+# ---------------------------------------------------------------- Phase 2
+# Phase 1's final settings, copied from the submitted Phase 1 report (Section V), so Phase 2
+# compares against exactly the models we reported.
+PHASE1_LR_C = 0.001
+PHASE1_XGB = dict(learning_rate=0.03, max_depth=3, min_child_weight=50, subsample=0.7,
+                  colsample_bytree=0.5, reg_lambda=1.0)
+PHASE1_XGB_TREES = 40
+PHASE1_HYBRID_TREES = 16
+

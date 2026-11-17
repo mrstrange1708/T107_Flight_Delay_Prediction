@@ -1,4 +1,4 @@
-"""Leakage guard: features for day D must not change if outcomes on/after D change.
+"""Leakage guard (owner: Srikar): features for day D must not change if outcomes on/after D change.
 Run from the repo root:  python -m pytest -q tests"""
 import sys
 from pathlib import Path
@@ -36,3 +36,19 @@ def test_features_ignore_same_day_and_future_outcomes():
 def test_no_post_departure_column_is_a_feature():
     _, g = features.build_features(_small())
     assert not set(features.numeric_columns(g)) & set(POST_DEPARTURE_COLUMNS)
+
+
+def test_sequences_ignore_same_day_and_future_outcomes():
+    """Phase 2: the 14-day sequences for day D read days D-14 ... D-1 only."""
+    from fdp import dl_inputs as sequences
+    df = _small()
+    scrambled = df.copy()
+    future = scrambled["date"] >= CUTOFF
+    scrambled.loc[future, "delayed"] = 1.0 - scrambled.loc[future, "delayed"]
+    rows = df[df["date"] == CUTOFF]
+    s1 = sequences.build_sequences(df, rows)
+    s2 = sequences.build_sequences(scrambled, rows)
+    np.testing.assert_array_equal(s1, s2)
+    # and the test has teeth: the day AFTER the cutoff must change
+    nxt = df[df["date"] == CUTOFF + pd.Timedelta(days=1)]
+    assert not np.array_equal(sequences.build_sequences(df, nxt), sequences.build_sequences(scrambled, nxt))

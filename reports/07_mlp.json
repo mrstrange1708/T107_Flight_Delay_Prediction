@@ -1,0 +1,221 @@
+{
+  "n_params": 52861,
+  "emb_params": 1660,
+  "overfit_curve": [
+    {
+      "epoch": 1,
+      "train log loss": 0.5315,
+      "September PR AUC": 0.257
+    },
+    {
+      "epoch": 2,
+      "train log loss": 0.5156,
+      "September PR AUC": 0.2649
+    },
+    {
+      "epoch": 3,
+      "train log loss": 0.5083,
+      "September PR AUC": 0.2724
+    },
+    {
+      "epoch": 4,
+      "train log loss": 0.501,
+      "September PR AUC": 0.2735
+    },
+    {
+      "epoch": 5,
+      "train log loss": 0.4953,
+      "September PR AUC": 0.2518
+    },
+    {
+      "epoch": 6,
+      "train log loss": 0.4893,
+      "September PR AUC": 0.2404
+    },
+    {
+      "epoch": 7,
+      "train log loss": 0.4841,
+      "September PR AUC": 0.2445
+    },
+    {
+      "epoch": 8,
+      "train log loss": 0.479,
+      "September PR AUC": 0.2476
+    },
+    {
+      "epoch": 9,
+      "train log loss": 0.474,
+      "September PR AUC": 0.254
+    },
+    {
+      "epoch": 10,
+      "train log loss": 0.4691,
+      "September PR AUC": 0.2516
+    },
+    {
+      "epoch": 11,
+      "train log loss": 0.4645,
+      "September PR AUC": 0.2301
+    },
+    {
+      "epoch": 12,
+      "train log loss": 0.4609,
+      "September PR AUC": 0.241
+    },
+    {
+      "epoch": 13,
+      "train log loss": 0.4563,
+      "September PR AUC": 0.2361
+    },
+    {
+      "epoch": 14,
+      "train log loss": 0.4525,
+      "September PR AUC": 0.236
+    },
+    {
+      "epoch": 15,
+      "train log loss": 0.4489,
+      "September PR AUC": 0.2318
+    }
+  ],
+  "lr_rolling": [
+    0.5565467767821326,
+    0.40549145626807404,
+    0.2654606383110089
+  ],
+  "lr_rolling_mean": 0.40916629045373853,
+  "search": [
+    {
+      "hidden": "(256, 128)",
+      "dropout": "0.5",
+      "lr": "0.0003",
+      "weight_decay": "0.01",
+      "Jul": 0.5617122704245692,
+      "Aug": 0.4021217989485557,
+      "Sep": 0.2552633743171717,
+      "mean": 0.4063658145634322,
+      "epochs per fold": [
+        8,
+        12,
+        2
+      ]
+    },
+    {
+      "hidden": "(256, 128)",
+      "dropout": "0.2",
+      "lr": "0.001",
+      "weight_decay": "0.0001",
+      "Jul": 0.5589643950972916,
+      "Aug": 0.40466931997077116,
+      "Sep": 0.25534471778353285,
+      "mean": 0.4063261442838652,
+      "epochs per fold": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "hidden": "(64, 32)",
+      "dropout": "0.2",
+      "lr": "0.0003",
+      "weight_decay": "0.01",
+      "Jul": 0.5555634730654027,
+      "Aug": 0.40422941178909655,
+      "Sep": 0.25369659287156937,
+      "mean": 0.4044964925753562,
+      "epochs per fold": [
+        13,
+        8,
+        3
+      ]
+    },
+    {
+      "hidden": "(64, 32)",
+      "dropout": "0.2",
+      "lr": "0.0003",
+      "weight_decay": "0.0001",
+      "Jul": 0.5552307932314696,
+      "Aug": 0.4042053648739538,
+      "Sep": 0.2537571210665174,
+      "mean": 0.40439775972398023,
+      "epochs per fold": [
+        13,
+        8,
+        3
+      ]
+    },
+    {
+      "hidden": "(256, 128)",
+      "dropout": "0.5",
+      "lr": "0.001",
+      "weight_decay": "0.01",
+      "Jul": 0.5566438798172404,
+      "Aug": 0.4017364215873515,
+      "Sep": 0.2544107152075098,
+      "mean": 0.40426367220403386,
+      "epochs per fold": [
+        4,
+        4,
+        1
+      ]
+    },
+    {
+      "hidden": "(64, 32)",
+      "dropout": "0.5",
+      "lr": "0.001",
+      "weight_decay": "0.01",
+      "Jul": 0.5616765388443113,
+      "Aug": 0.3982097452750154,
+      "Sep": 0.25241178953929255,
+      "mean": 0.40409935788620643,
+      "epochs per fold": [
+        4,
+        8,
+        2
+      ]
+    },
+    {
+      "hidden": "(64, 32)",
+      "dropout": "0.5",
+      "lr": "0.001",
+      "weight_decay": "0.0001",
+      "Jul": 0.5610336187531874,
+      "Aug": 0.39924606762686893,
+      "Sep": 0.2515522717685752,
+      "mean": 0.4039439860495438,
+      "epochs per fold": [
+        6,
+        8,
+        2
+      ]
+    },
+    {
+      "hidden": "(256, 128)",
+      "dropout": "0.2",
+      "lr": "0.001",
+      "weight_decay": "0.01",
+      "Jul": 0.5581511977640378,
+      "Aug": 0.3963630899717451,
+      "Sep": 0.2550002666416889,
+      "mean": 0.4031715181258239,
+      "epochs per fold": [
+        2,
+        2,
+        1
+      ]
+    }
+  ],
+  "best": {
+    "hidden": [
+      256,
+      128
+    ],
+    "dropout": 0.5,
+    "lr": 0.0003,
+    "weight_decay": 0.01
+  },
+  "embedding_best_epoch": 20,
+  "embedding_pc1_corr": 0.011158030760503155,
+  "quick_run": false
+}

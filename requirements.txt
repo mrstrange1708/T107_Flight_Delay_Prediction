@@ -1,4 +1,4 @@
-# Phase 1 (ML). Works on Google Colab and Python 3.10-3.13.
+# Phase 1 (ML) + Phase 2 (DL). Works on Google Colab and Python 3.10-3.13.
 pandas>=2.0
 numpy>=1.26
 scikit-learn>=1.4

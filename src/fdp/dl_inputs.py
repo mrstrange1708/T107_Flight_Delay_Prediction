@@ -1,5 +1,5 @@
 """Phase 2 · everything a network reads at 05:00.
-Owner: Srikar.
+Owner: Balanagu Sesha Srikar (Srikar).
 
 Part 1 - tabular inputs: TabularEncoder turns the 41 Phase 1 features and the 3 categories into
 arrays (numeric block, category indices for the embedding tables).
@@ -140,7 +140,7 @@ def build_sequences(df: pd.DataFrame, rows: pd.DataFrame, seq_len: int = SEQ_LEN
         base = p_all[lag_c] if relative else 0.0
         out.append(np.where(known, rate[lag_c, g_c] - base, 0.0 if relative else p_all[lag_c]))
         out.append(np.where(known, np.log1p(n[lag_c, g_c]), 0.0))
-    dow = dates.dayofweek.to_numpy()[lag_c]
+    dow = dates.day_of_week.to_numpy()[lag_c]
     out += [np.sin(2 * np.pi * dow / 7), np.cos(2 * np.pi * dow / 7)]
     seq = np.stack(out, axis=-1).astype(np.float32)
     seq[~valid] = 0.0

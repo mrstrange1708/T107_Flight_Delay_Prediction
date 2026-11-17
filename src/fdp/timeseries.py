@@ -1,5 +1,5 @@
 """Phase 2 · classical time-series check (ARIMA) on the daily late rate.
-Owner: Member 1.
+Owner: Balanagu Sesha Srikar (Srikar).
 
 The evaluator's question: "your data is a time series, why no ARIMA?"
 ARIMA forecasts ONE series (here: the share of NYC flights that arrive late each day). It cannot

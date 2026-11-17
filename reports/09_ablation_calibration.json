@@ -1,0 +1,178 @@
+{
+  "ablation": [
+    {
+      "ablation": "full model",
+      "folds": [
+        0.5651658356708733,
+        0.40472400743853143,
+        0.26331133417834085
+      ],
+      "mean": 0.4110670590959152,
+      "epochs": [
+        16,
+        19,
+        11
+      ],
+      "change vs full": 0.0
+    },
+    {
+      "ablation": "+ hand-made history (22 features)",
+      "folds": [
+        0.5634785697561283,
+        0.4028934609630088,
+        0.25934249983548874
+      ],
+      "mean": 0.4085715101848753,
+      "epochs": [
+        8,
+        7,
+        2
+      ],
+      "change vs full": -0.0024955489110398688
+    },
+    {
+      "ablation": "\u2212 GRU branch (MLP, no history)",
+      "folds": [
+        0.530231864964018,
+        0.3651302958641907,
+        0.21777281472592347
+      ],
+      "mean": 0.3710449918513774,
+      "epochs": [
+        19,
+        15,
+        2
+      ],
+      "change vs full": -0.04002206724453777
+    },
+    {
+      "ablation": "absolute rates in the sequence",
+      "folds": [
+        0.5578099662543075,
+        0.3934315603849909,
+        0.2839345184388536
+      ],
+      "mean": 0.41172534835938396,
+      "epochs": [
+        11,
+        5,
+        11
+      ],
+      "change vs full": 0.0006582892634687809
+    },
+    {
+      "ablation": "one-hot instead of embeddings",
+      "folds": [
+        0.5626406195753206,
+        0.4017370770330903,
+        0.2592344439705014
+      ],
+      "mean": 0.40787071352630416,
+      "epochs": [
+        13,
+        14,
+        6
+      ],
+      "change vs full": -0.0031963455696110143
+    },
+    {
+      "ablation": "7-day sequence",
+      "folds": [
+        0.5611001573677984,
+        0.40347293445155125,
+        0.26248047874748714
+      ],
+      "mean": 0.4090178568556122,
+      "epochs": [
+        16,
+        19,
+        9
+      ],
+      "change vs full": -0.002049202240302972
+    },
+    {
+      "ablation": "no dropout, no weight decay",
+      "folds": [
+        0.5702573931715446,
+        0.4023687624588622,
+        0.25544831213106545
+      ],
+      "mean": 0.4093581559204907,
+      "epochs": [
+        8,
+        8,
+        6
+      ],
+      "change vs full": -0.001708903175424492
+    },
+    {
+      "ablation": "no early stopping (15 epochs)",
+      "folds": [
+        0.5649994020583962,
+        0.4036155954216071,
+        0.2634769203250036
+      ],
+      "mean": 0.41069730593500225,
+      "epochs": [
+        15,
+        15,
+        15
+      ],
+      "change vs full": -0.0003697531609129223
+    }
+  ],
+  "seed_range_full": 0.003002576302975124,
+  "fixed_epochs": 15,
+  "calibration": [
+    {
+      "model": "Logistic regression",
+      "T": 0.7155211069663507,
+      "October ECE raw": 0.04078747119774376,
+      "after temperature": 0.026226519184570876,
+      "after Platt": 0.03718702075057596,
+      "mean p raw": 0.2143770687445745,
+      "mean p temperature": 0.15324323269266482,
+      "mean p Platt": 0.13898045156195002,
+      "October PR AUC": 0.30793964339125235
+    },
+    {
+      "model": "MLP + embeddings",
+      "T": 0.7342177253240203,
+      "October ECE raw": 0.036331663829636845,
+      "after temperature": 0.029057893732606633,
+      "after Platt": 0.03536034677293627,
+      "mean p raw": 0.20910237186825162,
+      "mean p temperature": 0.154183872290862,
+      "mean p Platt": 0.14034884383683127,
+      "October PR AUC": 0.3133227705706264
+    },
+    {
+      "model": "Temporal: GRU replaces hand history",
+      "T": 0.7863933822176881,
+      "October ECE raw": 0.04604623425367583,
+      "after temperature": 0.035785255670526345,
+      "after Platt": 0.029009152272066924,
+      "mean p raw": 0.21955166978100568,
+      "mean p temperature": 0.18031773509539145,
+      "mean p Platt": 0.1515482265766135,
+      "October PR AUC": 0.30675310678799106
+    },
+    {
+      "model": "Hybrid: LR + temporal correction",
+      "T": 0.7386212892046747,
+      "October ECE raw": 0.040747708348049694,
+      "after temperature": 0.03029042248684008,
+      "after Platt": 0.03564963529693021,
+      "mean p raw": 0.21483973326969427,
+      "mean p temperature": 0.16257445928402922,
+      "mean p Platt": 0.14187459392251206,
+      "October PR AUC": 0.30904783822925835
+    }
+  ],
+  "calibration_choice": "temperature",
+  "base_rates": {
+    "September": 0.1371714179933358,
+    "October": 0.17562373331469705
+  },
+  "quick_run": false
+}

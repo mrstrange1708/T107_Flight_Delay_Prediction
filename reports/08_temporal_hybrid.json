@@ -1,0 +1,213 @@
+{
+  "body": {
+    "hidden": [
+      256,
+      128
+    ],
+    "dropout": 0.5,
+    "lr": 0.0003,
+    "weight_decay": 0.01
+  },
+  "months": [
+    7,
+    8,
+    9
+  ],
+  "rolling": [
+    {
+      "model": "Logistic regression",
+      "Jul": 0.5565467767821326,
+      "Aug": 0.40549145626807404,
+      "Sep": 0.2654606383110089,
+      "mean": 0.40916629045373853
+    },
+    {
+      "model": "MLP + embeddings",
+      "Jul": 0.5598172983214055,
+      "Aug": 0.40357532740348173,
+      "Sep": 0.2552633743171717,
+      "mean": 0.40621866668068635
+    },
+    {
+      "model": "Temporal: GRU + all features",
+      "Jul": 0.5634785697561283,
+      "Aug": 0.4028934609630088,
+      "Sep": 0.25934249983548874,
+      "mean": 0.4085715101848753
+    },
+    {
+      "model": "Temporal: GRU replaces hand history",
+      "Jul": 0.5651658356708733,
+      "Aug": 0.40472400743853143,
+      "Sep": 0.26331133417834085,
+      "mean": 0.4110670590959152
+    },
+    {
+      "model": "Hybrid: LR + temporal correction",
+      "Jul": 0.5657935476684713,
+      "Aug": 0.4102151504927761,
+      "Sep": 0.2703768174266989,
+      "mean": 0.41546183852931545
+    },
+    {
+      "model": "XGBoost, tuned (Phase 1 report)",
+      "Jul": 0.548,
+      "Aug": 0.391,
+      "Sep": 0.219,
+      "mean": 0.386
+    },
+    {
+      "model": "Hybrid: XGBoost from LR (Phase 1 report)",
+      "Jul": 0.559,
+      "Aug": 0.391,
+      "Sep": 0.268,
+      "mean": 0.406
+    }
+  ],
+  "epochs_per_fold": {
+    "MLP + embeddings": [
+      6,
+      8,
+      2
+    ],
+    "Temporal: GRU + all features": [
+      8,
+      7,
+      2
+    ],
+    "Temporal: GRU replaces hand history": [
+      16,
+      19,
+      11
+    ],
+    "Hybrid: LR + temporal correction": [
+      11,
+      15,
+      11
+    ]
+  },
+  "seconds": {
+    "MLP + embeddings": 68,
+    "Temporal: GRU + all features": 169,
+    "Temporal: GRU replaces hand history": 390,
+    "Hybrid: LR + temporal correction": 340
+  },
+  "seed_spread": [
+    {
+      "model": "MLP + embeddings",
+      "seeds": [
+        42,
+        1,
+        2
+      ],
+      "rolling means": [
+        0.4062,
+        0.4079,
+        0.4076
+      ],
+      "mean over seeds": 0.40722995140759677,
+      "min": 0.40621866668068635,
+      "max": 0.40787590360870024,
+      "range": 0.0016572369280138943
+    },
+    {
+      "model": "Temporal: GRU replaces hand history",
+      "seeds": [
+        42,
+        1,
+        2
+      ],
+      "rolling means": [
+        0.4111,
+        0.4106,
+        0.4081
+      ],
+      "mean over seeds": 0.4099073054065571,
+      "min": 0.40806448279294005,
+      "max": 0.4110670590959152,
+      "range": 0.003002576302975124
+    },
+    {
+      "model": "Hybrid: LR + temporal correction",
+      "seeds": [
+        42,
+        1,
+        2
+      ],
+      "rolling means": [
+        0.4155,
+        0.4142,
+        0.4132
+      ],
+      "mean over seeds": 0.41428719857141344,
+      "min": 0.4131522827327084,
+      "max": 0.41546183852931545,
+      "range": 0.0023095557966070768
+    }
+  ],
+  "lr_rolling_mean": 0.40916629045373853,
+  "phase1_october_check": {
+    "Logistic regression": 0.3079,
+    "XGBoost (Phase 1)": 0.2731,
+    "Hybrid: XGBoost from LR (Phase 1)": 0.2921
+  },
+  "candidates": {
+    "MLP + embeddings": {
+      "config": {
+        "hidden": [
+          256,
+          128
+        ],
+        "dropout": 0.5,
+        "lr": 0.0003,
+        "weight_decay": 0.01
+      },
+      "numeric": "all",
+      "offset": false
+    },
+    "Temporal: GRU + all features": {
+      "config": {
+        "hidden": [
+          256,
+          128
+        ],
+        "dropout": 0.5,
+        "lr": 0.0003,
+        "weight_decay": 0.01,
+        "use_seq": true
+      },
+      "numeric": "all",
+      "offset": false
+    },
+    "Temporal: GRU replaces hand history": {
+      "config": {
+        "hidden": [
+          256,
+          128
+        ],
+        "dropout": 0.5,
+        "lr": 0.0003,
+        "weight_decay": 0.01,
+        "use_seq": true
+      },
+      "numeric": "no_history",
+      "offset": false
+    },
+    "Hybrid: LR + temporal correction": {
+      "config": {
+        "hidden": [
+          256,
+          128
+        ],
+        "dropout": 0.5,
+        "lr": 0.0003,
+        "weight_decay": 0.01,
+        "use_seq": true,
+        "use_offset": true
+      },
+      "numeric": "no_history",
+      "offset": true
+    }
+  },
+  "quick_run": false
+}
